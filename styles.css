@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Quattrocento+Sans:wght@400;700&display=swap');
+
+@mixin hoverize($color) {
+  background: desaturate($color, 25%);
+}
+
+body {
+  font-family: 'Quattrocento Sans', sans-serif;
+  font-size: 16px;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(30deg, RoyalBlue, pink);
+}
+
+.form-card {
+  background: lightcyan; /* Added light cyan color */
+  padding: 4rem 2rem;
+  width: 70%; /* Adjusted width for better visibility */
+  max-width: 460px;
+  box-shadow: 0 8px 22px transparentize(black, 0.60);
+  position: relative;
+  border-radius: 12px;
+  margin-top: 30px;
+}
+
+.avatar {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  background: white;
+  margin-left: -60px;
+  box-shadow: 0 12px 12px transparentize(black, 0.75);
+  border: 5px solid white;
+  border-radius: 50%;
+  background: url('https://srcwap.com/wp-content/uploads/2022/08/abstract-user-flat-4.png') center -18px no-repeat;
+  background-size: 110px;
+}
+
+form.material {
+  position: relative;
+  padding-bottom: 40px;
+}
+
+.material-input {
+  position: relative;
+  padding-top: 20px;
+  transition: all .15s ease-out;
+  width: 90%;
+  margin: 0 auto 20px;
+}
+
+.material-input label {
+  position: absolute;
+  pointer-events: none;
+  left: 4px;
+  top: 20px + 6px;
+  color: darkgray;
+  transform: scale(1.1);
+  transition: all .15s ease-out;
+}
+
+.material-input input {
+  border: none;
+  width: 100%;
+  color: darken(DarkGray, 45%);
+  border-bottom: 2px solid darkgray;
+  padding: 6px 4px;
+  outline: none;
+  transition: all .15s ease-out;
+}
+
+.material-input.materialize input {
+  border-bottom: 2px solid crimson;
+}
+
+.material-input.materialize label {
+  top: 0;
+  left: 0;
+  color: crimson;
+  transform: scale(0.95);
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons button {
+  padding: 20px;
+  margin: 0;
+  width: 48%;
+  color: white;
+  text-shadow: 0 0 8px transparentize(black, 0.5);
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+}
+
+.buttons button.cancel {
+  background: Crimson;
+  border-bottom-left-radius: 8px;
+}
+
+.buttons button.cancel:hover {
+  @include hoverize(Crimson);
+}
+
+.buttons button.update {
+  background: LimeGreen;
+  border-bottom-right-radius: 8px;
+}
+
+.buttons button.update:hover {
+  @include hoverize(LimeGreen);
+}

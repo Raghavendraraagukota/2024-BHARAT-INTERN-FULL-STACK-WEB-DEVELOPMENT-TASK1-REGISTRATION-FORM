@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Registration Form</title>
+</head>
+<body>
+  <div class="form-card">
+    <div class="avatar"></div>
+    <form class="material" action="/register" method="post">
+      <div class="material-input">
+        <input type="text" name="username" required>
+        <label>Username</label>
+      </div>
+      <div class="material-input">
+        <input type="email" name="email" required>
+        <label>Email</label>
+      </div>
+      <div class="material-input">
+        <input type="password" name="password" required>
+        <label>Password</label>
+      </div>
+      <div class="buttons">
+        <button type="button" class="cancel">Cancel</button>
+        <button type="submit" class="update">Register</button>
+      </div>
+    </form>
+    
+    <!-- Display registration message here -->
+    <div id="registrationMessage" style="display: none; color: green;">
+      Registration successful!
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const registrationForm = document.querySelector('.material');
+      const registrationMessage = document.getElementById('registrationMessage');
+
+      registrationForm.addEventListener('submit', async function (event) {
+        // Prevent the form from submitting normally
+        event.preventDefault();
+
+        // You can make an AJAX request to the server here if needed
+
+        // Show the registration message
+        registrationMessage.style.display = 'block';
+
+        // You can redirect the user after showing the message if needed
+        // window.location.href = '/success'; // Uncomment this line if you want to redirect
+      });
+    });
+  </script>
+</body>
+</html>
